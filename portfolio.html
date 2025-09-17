@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vetrivel - Web Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle, #0d0d1d, #000);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* Background Animation */
+    body::before {
+      content: "";
+      position: fixed;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: repeating-radial-gradient(circle, #1a1a2e 0px, #1a1a2e 2px, #111 2px, #111 4px);
+      animation: moveBG 20s linear infinite;
+      opacity: 0.08;
+      z-index: -1;
+    }
+
+    @keyframes moveBG {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 20px 30px;
+    }
+
+    header img {
+      width: 250px;
+      height: 250px;
+      border-radius: 20%;
+      border: 5px solid #ff00cc;
+      box-shadow: 0 0 30px #ff00cc;
+      transition: transform 0.4s ease;
+    }
+
+    header img:hover {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-top: 20px;
+      background: linear-gradient(45deg, #ff00cc, #3333ff);
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    .quote {
+      font-style: italic;
+      font-size: 1.3rem;
+      color: #ccc;
+      margin-top: 10px;
+      animation: pulse 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulse {
+      from { opacity: 0.6; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(5px); }
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #00ffe7;
+      text-shadow: 0 0 10px #00ffe7;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: baseline;
+      gap: 30px;
+    }
+
+    .card {
+      background: #1c1c3a;
+      width: 250px;
+      height: 180px;
+      perspective: 1000px;
+      
+      
+    }
+
+    .card-inner {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      position: relative;
+    }
+
+    .card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    .card-front {
+      background: #222;
+      box-shadow: 0 0 20px #00ffff;
+    }
+
+    .card-back {
+      background: #333;
+      transform: rotateY(180deg);
+      box-shadow: 0 0 20px #ff00cc;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 12px 30px;
+      background: linear-gradient(to right, #ff00cc, #3333ff);
+      color: #fff;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 20px #ff00cc;
+      transition: transform 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 30px #ff33ee;
+    }
+
+    footer {
+      background: #111;
+      color: #777;
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .card-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="profile.jpg" alt="Vetrivel" height="150px" width="150px">
+    <h1>I'm Vetrivel</h1>
+    <h2>Web Developer</h2>
+    <div class="quote">"Believe in yourself. Every expert was once a beginner."</div>
+  </header>
+
+  <section>
+    <h2>🚀 My Power Skills</h2>
+    <div class="card-container">
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">HTML</div>
+          <div class="card-back">I create structure & layout for web pages.</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">CSS</div>
+          <div class="card-back">I style and animate pages for attractive UI.</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">Soft Skills</div>
+          <div class="card-back">Communication, Teamwork, & Collaboration.</div>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="btn">🎯 Hire Me</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Vetrivel | Designed with ❤️ using HTML & CSS</p>
+  </footer>
+
+</body>
+</html>
